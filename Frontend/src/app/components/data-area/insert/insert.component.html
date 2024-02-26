@@ -1,0 +1,22 @@
+<form (submit)="send()">
+
+    <label>Target Audience: </label>
+    <select name="audienceId" class="form-control" [(ngModel)]="gift.audienceId">
+        <option selected disabled >Select Target Audience</option>
+        <option *ngFor="let a of audiences" value="{{a.audienceId}}">{{a.name}}</option>
+    </select>
+
+    <label>Name: </label>
+    <input type="text" name="name" class="form-control" [(ngModel)]="gift.name">
+
+    <label>Description: </label>
+    <input type="text" name="description" class="form-control" [(ngModel)]="gift.description">
+
+    <label>Number: </label>
+    <input type="number" step="0.01" name="price" class="form-control" [(ngModel)]="gift.price">
+
+    <label>Discount: </label>
+    <input type="number" name="discount" class="form-control" [(ngModel)]="gift.discount">
+
+    <button class="btn btn-primary">Add</button>
+</form>
